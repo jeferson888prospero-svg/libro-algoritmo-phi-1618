@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo Phi: El Reloj Secreto del Trading | Ing. Jeferson Leonardo Contreras Maldonado</title>
+    <style>
+        :root {
+            --bg-base: #0b0e14;
+            --bg-card: #161b22;
+            --border-color: #30363d;
+            --text-main: #e1e6ed;
+            --accent-gold: #f7931a;
+            --accent-cyan: #00f2fe;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        header {
+            background: linear-gradient(135deg, #161b22, #0d1117);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        h1 { color: var(--accent-gold); margin: 0 0 10px 0; font-size: 2.3em; }
+        .subtitle { color: var(--accent-cyan); font-weight: 600; font-size: 1.1em; }
+        .author { margin-top: 15px; font-style: italic; color: #8b949e; }
+        
+        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+        
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        h2 { color: var(--accent-gold); border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-top: 0; }
+        
+        .calc-box {
+            background: #0d1117;
+            border: 1px solid var(--accent-gold);
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+        input {
+            background: var(--bg-base);
+            border: 1px solid var(--border-color);
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 200px;
+            font-size: 1em;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        button {
+            background: var(--accent-gold);
+            color: #0b0e14;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        button:hover { opacity: 0.9; }
+        .result {
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: var(--accent-cyan);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #8b949e;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ALGORITMO PHI: EL RELOJ SECRETO DEL TRADING</h1>
+        <div class="subtitle">La Guía Maestra del Factor 1.618 para Dominar Entradas y Salidas en Wall Street, Criptomonedas y Memecoins</div>
+        <div class="author">Autor Exclusivo: Ing. Jeferson Leonardo Contreras Maldonado</div>
+    </header>
+
+    <div class="container">
+        
+        <div class="card">
+            <h2>Nota Editorial de Alta Dirección</h2>
+            <p>Este tratado constituye un manual de operaciones de alta densidad y optimización temporal. Diseñado exclusivamente para consolidar la autoría intelectual del <strong>Ing. Jeferson Leonardo Contreras Maldonado</strong>, el texto traduce la constante matemática 1.618 en ventanas horarias exactas y reglas de ejecución inmutables.</p>
+        </div>
+
+        <div class="card">
+            <h2>Simulador Algorítmico J.L.C.M. (Factor 1.618)</h2>
+            <p>Introduce el tiempo de acumulación (en minutos) para calcular la proyección exacta de expansión temporal y el límite de control cuántico:</p>
+            
+            <div class="calc-box">
+                <label for="accumTime">Minutos de Acumulación (Rango Lateral):</label><br>
+                <input type="number" id="accumTime" value="34" min="1"><br>
+                <button onclick="calcularJLCM()">Calcular Ventana Áurea</button>
+                
+                <div class="result" id="outputResult"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Prólogo: El Reloj Oculto del Mercado</h2>
+            <p>La mayoría de los traders pierden dinero porque están atrapados en la dimensión incorrecta (el precio). Los mercados financieros no se mueven de forma caótica; se expanden y se comprimen respondiendo a flujos de liquidez masivos que operan bajo ciclos algorítmicos estrictos regidos por el factor 1.618.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ing. Jeferson Leonardo Contreras Maldonado. Todos los derechos reservados. | Metodología J.L.C.M.</p>
+    </footer>
+
+    <script>
+        function calcularJLCM() {
+            let tAcumulacion = parseFloat(document.getElementById('accumTime').value);
+            if (isNaN(tAcumulacion) || tAcumulacion <= 0) {
+                document.getElementById('outputResult').innerHTML = "Por favor, ingresa un valor numérico válido.";
+                return;
+            }
+            let tExpansion = (tAcumulacion * 1.618).toFixed(2);
+            let stopLossQuant = (tAcumulacion / 1.618).toFixed(2);
+            
+            document.getElementById('outputResult').innerHTML = 
+                `⏱️ <strong>Ventana de Expansión (Take Profit):</strong> ${tExpansion} minutos<br>` +
+                `🛡️ <strong>Stop-Loss Cuántico (Inverso Phi):</strong> ${stopLossQuant} minutos de estancamiento máximo`;
+        }
+        calcularJLCM();
+    </script>
+</body>
+</html>
